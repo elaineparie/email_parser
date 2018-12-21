@@ -1,4 +1,5 @@
 require 'pry'
+
 class EmailParser::Importer
 
 #   attr_accessor :path
@@ -12,9 +13,8 @@ class EmailParser::Importer
 
 
 def self.create_files
+  files = Dir["/db/raw_emails.mail"].each {|file| require file }
   binding.pry
-  Dir["#{path}/*.mail"].collect do |file|
-  end
 end
 
 # def import
