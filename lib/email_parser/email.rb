@@ -1,7 +1,6 @@
 class EmailParser::Email
 
-    attr_accessor :subject, :to, :from, :message_id
-
+    attr_accessor :subject
 
 
   def self.sort_by_subject(emails)
@@ -19,12 +18,11 @@ class EmailParser::Email
     @emails
   end
 
-def self.group_into_convos(emails)
-  emails = self.sort_by_subject(emails)
-  @emails = emails.group_by(&:subject)
 
-  binding.pry
-end
+  def self.group_into_convos(emails)
+    emails = self.sort_by_subject(emails)
+    @emails = emails.group_by(&:subject)
+  end
 
 
 end
