@@ -1,6 +1,6 @@
 class EmailParser::Email
 
-    attr_accessor :subject, :to, :from, :message_id, :personal_convos, :group_convos, :promotions
+    attr_accessor :subject, :to, :from, :message_id
 
 
   def self.create_emails(emails)
@@ -50,19 +50,18 @@ class EmailParser::Email
             email_hash["personal"] = email
 
         end
+      end
+      print_emails(email_hash)
     end
-    print_emails(email_hash)
-  end
 
   def self.print_emails(email_hash)
       puts "Enter 'Personal' to view your personal inbox or 'Promotion' to view your promotional inbox"
       input = gets.strip.downcase
       if input == "personal"
         puts email_hash["personal"]
-       elsif input == "promotion"
+      elsif input == "promotion"
          puts email_hash["promotion"]
       end
-
   end
 
 

@@ -1,5 +1,5 @@
 require 'pry'
- # require_relative '../../db/raw_emails'
+ # require_relative '../../db/raw_emails/2017-11-02-18:58:15.mail'
 class EmailParser::Importer
 
 
@@ -13,48 +13,66 @@ class EmailParser::Importer
 
 
 def self.import_files
-  emails = ["From: Carmella Draeger <carmella@example.com>
-  To: Celia Prince <celia@example.com>, Alisson Silva <alisson@example.com>
-  Cc: iyana@example.com
-  Message-ID: <1@example>
-  Subject: Meeting
-  Date: 2 Nov 2017 18:58:15 +0000
+  files = []
+  some_dir = Dir.open "./db/raw_emails"
+  # some_dir.delete(".")
+  some_dir.each do |file|
+    if file != "." && file != ".." && file != ".DS_Store"
+    # binding.pry
+    # do something
+    files << File.open(file, "r")
 
-  Hi both, can you let me know ideal times for meeting please?",
-  "From: Celia Prince <celia@example.com>
-  To: Carmella Draeger <carmella@example.com>
-  Cc: iyana@example.com, Alisson Silva <alisson@example.com>
-  Message-ID: <2@example>
-  In-Reply-To: <1@example>
-  Subject: RE: Meeting
-  Date: 2 Nov 2017 20:38:12 +0000
+  # file = File.absolute_path file # => "/users/andrew/Documents/plans.txt"
+    end
+  end
+# binding.pry
+    # use it here
 
-  Hey Carmella,
-
-  Tuesday would be best for me. I'm otherwise very busy.
-
-  Best,
-  Celia
-
-  > Hi both, can you let me know ideal times for meeting please?
-",
-"From: Red Hot Deals!!! <promotions@example.com>
-To: Carmella Draeger <carmella@example.com>
-Message-ID: <5@example>
-Subject: Fidget spinners REDUCED TO CLEAR
-Date: 4 Nov 2017 11:22:00 +0000
-
-Check out this deal - available today only!
-
-https://redhot.deals/3f98j23/fidget-spinners-reduced-to-clear",
-"From: Alisson Silva <alisson@example.com>
-To: Carmella Draeger <carmella@example.com>
-Message-ID: <3@example>
-Subject: Re: Meeting
-Date: 2 Nov 2017 20:42:55 +0000
-
-Wide open, literally any day works!
-"]
+  emails = files.each do |line|
+    File.open(line, "r")
+  end
+# ["From: Carmella Draeger <carmella@example.com>
+# #   To: Celia Prince <celia@example.com>, Alisson Silva <alisson@example.com>
+# #   Cc: iyana@example.com
+# #   Message-ID: <1@example>
+# #   Subject: Meeting
+# #   Date: 2 Nov 2017 18:58:15 +0000
+# #
+# #   Hi both, can you let me know ideal times for meeting please?",
+#   "From: Celia Prince <celia@example.com>
+#   To: Carmella Draeger <carmella@example.com>
+#   Cc: iyana@example.com, Alisson Silva <alisson@example.com>
+#   Message-ID: <2@example>
+#   In-Reply-To: <1@example>
+#   Subject: RE: Meeting
+#   Date: 2 Nov 2017 20:38:12 +0000
+#
+#   Hey Carmella,
+#
+#   Tuesday would be best for me. I'm otherwise very busy.
+#
+#   Best,
+#   Celia
+#
+#   > Hi both, can you let me know ideal times for meeting please?
+# ",
+# "From: Red Hot Deals!!! <promotions@example.com>
+# To: Carmella Draeger <carmella@example.com>
+# Message-ID: <5@example>
+# Subject: Fidget spinners REDUCED TO CLEAR
+# Date: 4 Nov 2017 11:22:00 +0000
+#
+# Check out this deal - available today only!
+#
+# https://redhot.deals/3f98j23/fidget-spinners-reduced-to-clear",
+# "From: Alisson Silva <alisson@example.com>
+# To: Carmella Draeger <carmella@example.com>
+# Message-ID: <3@example>
+# Subject: Re: Meeting
+# Date: 2 Nov 2017 20:42:55 +0000
+#
+# Wide open, literally any day works!
+# "]
 
   EmailParser::Email.group_into_convos(emails)
 end
