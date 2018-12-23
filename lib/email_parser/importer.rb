@@ -18,19 +18,22 @@ def self.import_files
   # some_dir.delete(".")
   some_dir.each do |file|
     if file != "." && file != ".." && file != ".DS_Store"
-    # binding.pry
-    # do something
-    files << File.open(file, "r")
+      file = File.open("db/raw_emails/#{file}").read
+      files << file
+    end
 
   # file = File.absolute_path file # => "/users/andrew/Documents/plans.txt"
-    end
   end
 # binding.pry
     # use it here
 
-  emails = files.each do |line|
-    File.open(line, "r")
-  end
+    emails = files
+  # emails = files.each do |file|
+  #   file = File.open(file, "r")
+  #   file.each do |line|
+  #     binding.pry
+  #   end
+  # end
 # ["From: Carmella Draeger <carmella@example.com>
 # #   To: Celia Prince <celia@example.com>, Alisson Silva <alisson@example.com>
 # #   Cc: iyana@example.com
