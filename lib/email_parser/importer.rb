@@ -12,7 +12,7 @@ class EmailParser::Importer
 # end
 
 
-def self.create_files
+def self.import_files
   emails = ["From: Carmella Draeger <carmella@example.com>
   To: Celia Prince <celia@example.com>, Alisson Silva <alisson@example.com>
   Cc: iyana@example.com
@@ -46,7 +46,15 @@ Date: 4 Nov 2017 11:22:00 +0000
 
 Check out this deal - available today only!
 
-https://redhot.deals/3f98j23/fidget-spinners-reduced-to-clear"]
+https://redhot.deals/3f98j23/fidget-spinners-reduced-to-clear",
+"From: Alisson Silva <alisson@example.com>
+To: Carmella Draeger <carmella@example.com>
+Message-ID: <3@example>
+Subject: Re: Meeting
+Date: 2 Nov 2017 20:42:55 +0000
+
+Wide open, literally any day works!
+"]
 
   EmailParser::Email.group_into_convos(emails)
 end
