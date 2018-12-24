@@ -1,6 +1,8 @@
-# EmailParser
+# Next Steps
 
-clean up the print_emails method
+Moving forward, I would clean up this code so it is less repetitive, especially the EmailParser::Email.print_emails method which is rather long and complex. After this I would make the gem more user friendly -- easier to read and aware of user errors (ex. they misspell the name of a conversation). I would also do a fair amount of quality control to be 100% confident in my code and if the parsing mechanism would hold true for every incoming email. 
+
+# EmailParser
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/email_parser`. To experiment with that code, run `bin/console` for an interactive prompt.
 
