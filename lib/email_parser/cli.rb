@@ -13,4 +13,5 @@ def call
          EmailParser::Importer.import_files
       end
     end
+
 end
