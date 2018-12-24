@@ -26,7 +26,7 @@ Or install it yourself as:
 
 ## Usage
 
-To begin the program, run 'ruby bin/email_parser' in the terminal and then follow the prompts. 
+To begin the program, run 'ruby bin/email_parser' in the terminal and follow the prompts. 
 
 ## Development
 
