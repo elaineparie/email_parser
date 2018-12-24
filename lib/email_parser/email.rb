@@ -74,7 +74,7 @@ class EmailParser::Email
   def self.emails_with_index(value)
     value.each_with_index do |email, index|
      puts "#{index + 1}. #{email}"
-   end
+    end
   end
 
   def self.ask_for_conversation_name(specific_hash)
@@ -83,7 +83,7 @@ class EmailParser::Email
     input = gets.strip.downcase
       specific_hash[input].each_with_index do |email, index|
         puts "  #{index + 1}. #{email}"
-    end
+      end
     ask_for_email_index(specific_hash[input])
   end
 
