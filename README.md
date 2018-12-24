@@ -1,12 +1,11 @@
-# Next Steps
+
+# NEXT STEPS
 
 Moving forward, I would clean up this code so it is less repetitive, especially the EmailParser::Email.print_emails method which is rather long and complex. After this I would make the gem more user friendly -- easier to read and aware of user errors (ex. they misspell the name of a conversation). I would also do a fair amount of quality control to be 100% confident in my code and if the parsing mechanism would hold true for every incoming email.
 
 # EmailParser
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/email_parser`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the email_parser gem which imports a dummy set of emails and organizes them into conversations based on subject name. Run `ruby bin/email_parser` for an interactive prompt.
 
 ## Installation
 
@@ -26,7 +25,7 @@ Or install it yourself as:
 
 ## Usage
 
-To begin the program, run 'ruby bin/email_parser' in the terminal and follow the prompts. 
+To begin the program, run 'ruby bin/email_parser' in the terminal and follow the prompts.
 
 ## Development
 
