@@ -1,7 +1,7 @@
 
 # NEXT STEPS
 
-Moving forward, I would clean up this code so it is less repetitive, especially the EmailParser::Email.print_emails method which is rather long and complex. After this I would make the gem more user friendly -- easier to read and aware of user errors (ex. they misspell the name of a conversation). I would also do a fair amount of quality control to be 100% confident in my code and if the parsing mechanism would hold true for every incoming email.
+Moving forward, I would clean up this code so it is less repetitive, especially the EmailParser::Email.print_emails method which is rather long and complex. After this I would make the gem more user friendly -- easier to read and aware of user errors (ex. they misspell the name of a conversation). I would create a database for the emails and do a fair amount of quality control to be 100% confident in my code and if the parsing mechanism would hold true for every incoming email. 
 
 # EmailParser
 
